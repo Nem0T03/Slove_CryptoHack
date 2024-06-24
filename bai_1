@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import sys # đây là hàm thư vện system 
+# import this
+
+if sys.version_info.major == 2: # đây là hàm kiểm tra bản thứ bao nhiêu của python
+    print("You are running Python 2, which is no longer supported. Please update to Python 3.") # đây là hàm in khi kiểm tra xong 
+
+ords = [81, 64, 75, 66, 70, 93, 73, 72, 1, 92, 109, 2, 84, 109, 66, 75, 70, 90, 2, 92, 79]
+# chứa các số nguyên , có thể là các giá trị ASCII đã được mã hoá 
+print("Here is your flag:")
+# in ra thông báo 
+print("".join(chr(o ^ 0x32) for o in ords))
+#đây là hàm in ra thông điệp 
+  1/  chr(o ^ 0x32) : đây là hàm thực hiện phép XOR giữa mỗi phần tử 'o' trong danh sách 'ords' với số 0x32 ( 50 trong hệ thập phân ) 
+  + chr(...): chuyển đổi kết quả của phép XOR sang kí tự ASCII tương ứng .
+  2/ .join(...)
+  + ... for o in ords : duyệt qya từng thành phần tử trong danh sách 'ords'
+  +join(..): kết hợp các ký tự đã được giải quyết giải mã lại thành 1 chuỗi 
+
+
+( mai học lại xor ) https://xaydungso.vn/blog/dinh-nghia-phep-xor-la-gi-va-cach-su-dung-trong-lap-trinh-vi-cb.html
