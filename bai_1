@@ -18,5 +18,28 @@ print("".join(chr(o ^ 0x32) for o in ords))
   + ... for o in ords : duyệt qya từng thành phần tử trong danh sách 'ords'
   +join(..): kết hợp các ký tự đã được giải quyết giải mã lại thành 1 chuỗi 
 
+xử lý bài ASCII trong crypto hack : 
 
-( mai học lại xor ) https://xaydungso.vn/blog/dinh-nghia-phep-xor-la-gi-va-cach-su-dung-trong-lap-trinh-vi-cb.html
+đề bài bắt ta phải đảo ngược mảng với chuỗi số nguyên như sau : [99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]
+và có gợi ý dùng fuction tên là chr() để đảo ngược chuỗi ord() :
+
+ta có code giải như sau : 
+
+#!/usr/bin/env python3
+
+import sys
+# import this
+
+if sys.version_info.major == 2:
+    print("You are running Python 2, which is no longer supported. Please update to Python 3.")
+
+chr_list = [99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]
+flag =''
+print("Here is your flag:")
+for c in chr_list:
+    flag += chr(c)
+print(flag)
+
+và kết quả là :  crypto{ASCII_pr1nt4bl3}
+
+
