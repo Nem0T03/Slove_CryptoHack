@@ -1,0 +1,37 @@
+This part provides a tip that the bytes.fromhex() function can be used to convert hex to bytes. The .hex() instance method can be called on byte strings to get the hex representation. However, I don't need this tip because I have a library that includes from binascii import unhexlify.
+Here is a code example:
+from binascii import unhexlify
+
+flag = unhexlify(b'63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d')
+print(flag)
+
+And the answer is : b'crypto{You_will_be_working_with_hex_strings_a_lot}'
+
+* from binascii import unhexlify
+is an import statement in Python. Here’s a detailed explanation of each part:
+
+from binascii:
+
+This part indicates that you are importing something from the binascii module. The binascii module contains various methods to convert between binary and ASCII.
+import unhexlify:
+
+This part specifies what you are importing from the binascii module, which in this case is the unhexlify function.
+What is unhexlify?
+The unhexlify function is used to convert a string of hexadecimal digits into a binary string (bytes object). Essentially, it takes a string representation of hexadecimal data and converts it back into its original byte form.
+
+Example of unhexlify in Use
+Here’s an example to illustrate how unhexlify works:
+
+example: 
+
+from binascii import unhexlify
+
+hex_string = "48656c6c6f20576f726c64"  # Hexadecimal representation of "Hello World"
+bytes_data = unhexlify(hex_string)
+
+print(bytes_data)  # Output will be: b'Hello World'
+In this example:
+
+The string "48656c6c6f20576f726c64" is a hexadecimal representation of the ASCII string "Hello World".
+The unhexlify function converts this hex string back to the bytes representation of "Hello World".
+The print function then outputs b'Hello World', where the b prefix indicates that this is a bytes object.
