@@ -1,0 +1,17 @@
+When I see this theory, I think of discrete math. Despite not having attended university, I learn knowledge from books and the internet, and I am happy to read and understand this. So, I won't write too much about this.
+
+Exercise:
+
+Given the string label:
+
+python
+Sao chép mã
+given = "label"
+
+print("crypto{", end="")
+for x in given:
+    print(chr(ord(x)^13), end="")
+print("}")
+XOR each character with the integer 13. Convert these integers back to a string and submit the flag as crypto{new_string}.
+
+Result: crypto{aloha}
