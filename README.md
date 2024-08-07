@@ -1,1 +1,1 @@
-tập tành chơi CTF =))) và hiện tại đang cập nhật lời giải chi tiết cho các bạn đang đọc 
+Practicing Capture The Flag (CTF) :D and currently updating detailed solutions for readers.
