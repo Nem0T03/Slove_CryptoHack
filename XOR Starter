@@ -4,8 +4,6 @@ Exercise:
 
 Given the string label:
 
-python
-Sao chép mã
 given = "label"
 
 print("crypto{", end="")
