@@ -1,0 +1,45 @@
+
+Hmm, this exercise seems easy for someone who has read it or learned it at university, right? :D 
+
+The theory is distinct, but maybe I need to explain it again for better understanding of the question.
+
+This question involves three keys, and one or more of these keys are commutative in theory:  
+
+Commutative: A ⊕ B = B ⊕ A
+Associative: A ⊕ (B ⊕ C) = (A ⊕ B) ⊕ C
+
+So I used Python to solve this quiz. My idea was to find key 2, 3, and 4 from key 1.
+
+Here is my Python code:
+
+
+def hex_to_bytes(hex_string):
+    return bytes.fromhex(hex_string)
+
+def xor_bytes(byte_array1, byte_array2):
+    return [b1 ^ b2 for b1, b2 in zip(byte_array1, byte_array2)]
+
+def bytes_to_string(byte_array):
+    return "".join(chr(b) for b in byte_array)
+
+k1_hex = "a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313"
+k2_k1_hex = "37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e"
+k2_k3_hex = "c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1"
+flag_k1_k3_k2_hex = "04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf"
+
+k1_bytes = hex_to_bytes(k1_hex)
+k2_k3_bytes = hex_to_bytes(k2_k3_hex)
+flag_k1_k3_k2_bytes = hex_to_bytes(flag_k1_k3_k2_hex)
+
+flag_k1_bytes = xor_bytes(flag_k1_k3_k2_bytes, k2_k3_bytes)
+flag_bytes = xor_bytes(flag_k1_bytes, k1_bytes)
+
+flag = bytes_to_string(flag_bytes)
+
+print("Flag:")
+print(flag)
+
+
+Result:
+
+Flag: crypto{x0r_i5_ass0c1at1v3}
