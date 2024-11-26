@@ -1,1 +1,1 @@
-Practicing Capture The Flag (CTF) :D and currently updating detailed solutions for readers.
+Capture The Flag (CTF) Practice: Detailed Solutions and Analysis for Learners 😄
